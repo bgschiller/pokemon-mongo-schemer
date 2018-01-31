@@ -1,7 +1,7 @@
 Mongo Schemas with Pokemon
 ==========================
 
-*Cross-posted to my blog at https://brianschiller.com/blog/2018/01/30/pokemon-mongo-schemer
+*Cross-posted to my blog at https://brianschiller.com/blog/2018/01/30/pokemon-mongo-schemer *
 
 Okay, so we're trying organize our pokemon. Build up our own little pokedex, if you will. And we're gonna use Mongodb because we gotta be web-scale; who *knows* how many pokemon there could be (I lost track after the first 151).
 
