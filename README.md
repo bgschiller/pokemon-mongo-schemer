@@ -13,7 +13,7 @@ Let's get started. I'm looking at [pokemon.json](./pokemon.json), which is based
 
 Here's our schema to begin with.
 
-```json
+```javascript
 {
   type: "object",
   properties: {
@@ -133,7 +133,7 @@ const db = MongoSchemer.explainSchemaErrors(
 
 Now let's run our Norberta script again. This time, it reports on the errors:
 
-```json
+```javascript
 [ { keyword: 'enum',
     dataPath: '.element[0]',
     schemaPath: '#/properties/element/items/enum',
