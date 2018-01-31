@@ -1,11 +1,15 @@
 const { MongoClient } = require('mongodb');
+const MongoSchemer = require('mongo-schemer');
 const pokes = require('./pokemon.json');
 const schema = require('./schema.js');
 
 process.on('unhandledRejection', (error) => console.error('unhandled', error));
 (async function() {
   const client = await MongoClient.connect('mongodb://localhost:27017');
-  const db = client.db('pokedex');
+  const db = MongoSchemer.explainSchemaErrors(
+    client.db('pokedex'), {
+      onError: (errors) => console.error(errors),
+    });
   db.createCollection(
     'pokemon',
     { validator: {
