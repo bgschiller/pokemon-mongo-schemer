@@ -1,5 +1,6 @@
 const { MongoClient } = require('mongodb');
 const MongoSchemer = require('mongo-schemer');
+const $RefParser = require('json-schema-ref-parser');
 const pokes = require('./pokemon.json');
 const schema = require('./schema.js');
 
@@ -10,10 +11,13 @@ process.on('unhandledRejection', (error) => console.error('unhandled', error));
     client.db('pokedex'), {
       onError: (errors) => console.error(errors),
     });
+
+  const inlinedSchema = await $RefParser.dereference(schema);
+  delete inlinedSchema.definitions;
   db.createCollection(
     'pokemon',
     { validator: {
-        $jsonSchema: schema,
+        $jsonSchema: inlinedSchema,
       },
     });
   const pokemon = db.collection('pokemon');
