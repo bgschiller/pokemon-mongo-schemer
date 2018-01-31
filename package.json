@@ -1,0 +1,14 @@
+{
+  "name": "pokemon-mongo-schemer",
+  "version": "0.0.0",
+  "description": "Exercise mongo-schemer with a pokemon example",
+  "main": "loadPokes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brian Schiller",
+  "license": "MIT",
+  "dependencies": {
+    "mongodb": "^3.0.2"
+  }
+}
