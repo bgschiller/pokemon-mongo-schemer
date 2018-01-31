@@ -1,5 +1,12 @@
 module.exports = {
   type: "object",
+  definitions: {
+    Stat: {
+      type: "number",
+      minimum: 0,
+      maximum: 255,
+    },
+  },
   properties: {
     element: {
       type: "array",
@@ -17,6 +24,15 @@ module.exports = {
     },
     stats: {
       type: "object",
+      properties: {
+        hp: { $ref: "#/definitions/Stat" },
+        attack: { $ref: "#/definitions/Stat" },
+        defense: { $ref: "#/definitions/Stat" },
+        spattack: { $ref: "#/definitions/Stat" },
+        spdefense: { $ref: "#/definitions/Stat" },
+        speed: { $ref: "#/definitions/Stat" },
+      },
+      additionalProperties: false,
     },
     misc: {
       type: "object",
