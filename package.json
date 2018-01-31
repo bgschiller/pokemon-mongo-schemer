@@ -9,6 +9,7 @@
   "author": "Brian Schiller",
   "license": "MIT",
   "dependencies": {
+    "ajv-cli": "^3.0.0",
     "mongodb": "^3.0.2"
   }
 }

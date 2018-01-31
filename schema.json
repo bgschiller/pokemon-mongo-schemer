@@ -1,0 +1,1 @@
+{"type":"object","properties":{"element":{"type":"array","items":{"type":"string","enum":["Grass","Poison","Fire","Water"]}},"stats":{"type":"object"},"misc":{"type":"object","properties":{"sex_ratios":{"type":"object"},"classification":{"type":"string"}},"additionalProperties":true}},"additionalProperties":true}

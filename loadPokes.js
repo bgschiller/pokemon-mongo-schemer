@@ -15,7 +15,14 @@ process.on('unhandledRejection', (error) => console.error('unhandled', error));
   const pokemon = db.collection('pokemon');
   try {
     console.log('gonna insert the first pokemon');
-    const response = await pokemon.insertOne(pokes[0]);
+    const response = await pokemon.insertOne({
+      name: "Norberta",
+      element: [
+        "Flying",
+        "Norwegian Ridge-back",
+      ],
+      stats: "no thanks",
+    });
   } catch (e) {
     console.error(e);
   }
