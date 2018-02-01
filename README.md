@@ -1,7 +1,7 @@
 Mongo Schemas with Pokemon
 ==========================
 
-*Cross-posted to my blog at https://brianschiller.com/blog/2018/01/30/pokemon-mongo-schemer *
+*Cross-posted to my blog at https://brianschiller.com/blog/2018/01/30/pokemon-mongo-schemer*
 
 Okay, so we're trying organize our pokemon. Build up our own little pokedex, if you will. And we're gonna use Mongodb because we gotta be web-scale; who *knows* how many pokemon there could be (I lost track after the first 151).
 
@@ -198,3 +198,8 @@ db.createCollection(
 ```
 
 That's more like it! Now if we run our script, we should get some errors saying things like "stats.attack should be number". Sure enough, take a look at Bulbasaur in pokemon.json: some of his stats are strings pretending to be numbers. If we fix those up, the errors go away.
+
+
+We could keep making our schema more descriptive. For example, there are more elements (pokemon types) than the four we have listed here, and we could document the structure of the `moves` object. I'll leave those as an exercise for the reader.
+
+MongoDB support for JSON Schema is useful, but has two big holes: it doesn't support `definitions` in the schema, and when something goes wrong it doesn't tell you what. Hopefully those will be added in a future version, but [mongo-schemer](https://github.com/devetry/mongo-schemer) and [json-schema-ref-parser](https://github.com/BigstickCarpet/json-schema-ref-parser) fill those gaps in the meantime.
